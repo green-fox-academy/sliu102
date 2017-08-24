@@ -1,0 +1,24 @@
+header{
+	background-color: black;
+	color:white;
+}
+header p{
+	margin: -40px 120px;
+}
+.question{
+	text-align: center;
+	position: relative;
+	margin-top: 50px;
+}
+.tips{
+	position: relative;
+	margin-left: 20px;
+
+}
+
+section {
+	background-color: rgb(238,85,32);
+}
+article p span{
+	background-color: yellow;
+}

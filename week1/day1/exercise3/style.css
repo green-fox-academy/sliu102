@@ -1,0 +1,18 @@
+table{
+  border: 10px solid rgb(70,136,241);
+  width: 350px;
+  height:250px;
+  text-align: center;
+  color: #fff;
+  font-size: 2em;
+
+}
+
+.box1{
+  background-color: rgb(228,119,120);
+  margin-bottom: 10px;
+}
+
+.box2{
+  background-color: rgb(171,230,229);
+}

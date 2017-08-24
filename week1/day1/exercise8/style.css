@@ -1,0 +1,53 @@
+.fn{
+  position: absolute;
+  margin-top: 5px;
+}
+#firstname{
+  position: absolute;
+  margin-top: 25px;
+}
+.ln{
+  position: absolute;
+  margin-top: 45px;
+}
+#lastname{
+  position: absolute;
+  margin-top: 65px;
+}
+.em{
+  position: absolute;
+  margin-top: 85px;
+}
+#email{
+  position: absolute;
+  margin-top: 105px;
+}
+.pa{
+  position: absolute;
+  margin-top: 125px;
+}
+#password{
+  position: absolute;
+  margin-top: 145px;
+}
+.cp{
+  position: absolute;
+  margin-top: 165px;
+}
+#confirmed-password{
+  position: absolute;
+  margin-top: 185px;
+}
+input[type="checkbox"]{
+  position: absolute;
+  margin-top: 215px;
+}
+p{
+  position: absolute;
+  margin-top: 214px;
+  margin-left: 20px;
+}
+input[type="button"]{
+  position: absolute;
+  margin-top: 245px;
+}
