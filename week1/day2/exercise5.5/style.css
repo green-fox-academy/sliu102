@@ -1,0 +1,31 @@
+main{
+	width: 300px;
+	height: 70px;
+	display: block;
+	background: rgb(236,86,32);
+}
+
+.ok{
+    background: linear-gradient(to left,rgb(10,102,190),rgb(71,72,132));
+}
+
+.cancel{
+    background: linear-gradient(to left,rgb(228,222,54),rgb(164,160,37));
+
+}
+input{
+	width: 110px;
+	height: 50px;
+	position: relative;
+	top: 10px;
+	left: 45px;
+	font-size: 20px;
+}
+
+.ok:hover{
+    background: linear-gradient(to left,rgb(228,222,54),rgb(164,160,37));
+}
+
+.cancel:hover{
+    background: linear-gradient(to left,rgb(10,102,190),rgb(71,72,132));
+}

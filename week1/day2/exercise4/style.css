@@ -1,0 +1,19 @@
+main{
+	width: 700px;
+	height: 500px;
+	display: block;
+	background: linear-gradient(to left, rgb(236,86,32) , rgb(218,119,87));
+}
+
+div{
+	width:400px;
+    height:200px;
+    background-color: rgb(218,119,87);
+    display: block;
+    position: relative;
+    top: 150px;
+    left: 150px;
+    box-shadow: 10px 10px 5px #888888;
+    opacity: 0.5;
+    border-radius: 15px;
+}

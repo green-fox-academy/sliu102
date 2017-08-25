@@ -1,0 +1,53 @@
+body{
+	width:800px;
+	height: 800px;
+
+}
+header{
+	width: 800px;
+	height: 20%;
+	background: rgb(0,255,255);
+    display: block;
+
+}
+.left{
+	width: 100px;
+	height: 60%;
+	background: rgb(254,165,0);
+	display: inline-block;
+	float: left;
+}
+
+main{
+	width: 400px;
+	height: 60%;
+	background: red;
+	margin: auto 100px;
+	display: inline-block;
+
+}
+p{
+	width: 60px;
+	height: 60px;
+	background: black;
+	position: relative;
+	top: 380px;
+	left: 300px;
+
+}
+
+.right{
+	width: 100px;
+	height: 60%;
+	background: purple;
+	display: inline-block;
+	float: right;
+}
+
+footer{
+	width: 800px;
+	height: 20%;
+	background: blue;
+	display: block;
+	margin-top: -5px;
+}
