@@ -11,7 +11,7 @@ body {
 }
 
 .head {
-	height: 10%;
+	height: 5%;
 	width: 100%;
 }
 
@@ -43,13 +43,17 @@ nav,a, .search {
 	text-decoration:underline;
 }
 
-.title {
+h1 {
 	width: 100%;
 	border-bottom: 1px solid #000;
 }
 
+.content{
+   height: 90%;
+}
+
 .article {
-	height:90%;
+	height:95%;
 	width: 85%;
 	padding: 10px;
 	border-left:1px solid rgb(166,213,247);
@@ -65,12 +69,18 @@ nav,a, .search {
 	float: right;
 }
 
-.content-box{
+.content-box {
 	height: 320px;
 	width: 180px;
 	background: rgb(246,246,246);
 	border: 1px solid #000;
 	font-size: 15px;
+}
+
+.content-box button {
+    position: relative;
+    left: 110px;
+    bottom: 38px;
 }
 
 .content-box > ul>li{
@@ -86,10 +96,14 @@ nav,a, .search {
 	margin-left: 5px;
 }
 
-.box-bottom dd{
+.box-bottom dd {
 	width: 150px;
     margin-top: -18px;
     margin-left: 100px;
+}
+
+h3 {
+	border-bottom: 1px solid #000;
 }
 
 .photo {
@@ -103,7 +117,14 @@ nav,a, .search {
 
 .side-bar ul li:first-child a {
     color: #000;
+    border-bottom: 1px solid #000;
+    display: block;
 
+}
+
+.side-bar ul {
+	height: 100px;
+	margin-bottom: 20px;
 }
 
 .logo img{
@@ -123,6 +144,7 @@ li {
 }
 
 footer {
+	height: 200px;
 	margin-left: 180px;
 	width: 70%;
 }
