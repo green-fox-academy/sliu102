@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: Attributes</title>
+</head>
+<body>
+
+  <img src="https://static.wixstatic.com/media/f4461b_83457ca5dd844c71a760d36e6583d0ff.png/v1/fill/w_168,h_168,al_c,usm_0.66_1.00_0.01/f4461b_83457ca5dd844c71a760d36e6583d0ff.png">
+  <a href="http://www.themostamazingwebsiteontheinternet.com/">The Best Website Ever</a>
+  <button>Click me!</button>
+  <button class="this-one">Click me!</button>
+
+  <script>
+    var img = document.getElementsByTagName('img')[0];
+    console.log(img.getAttribute('src'));
+
+    img.setAttribute('src','2.pic.jpg');
+
+    document.getElementsByTagName('a')[0].setAttribute('href','https://www.greenfoxacademy.com/?gclid=CIihzar-gNYCFRXYvQodrLYK0g');
+
+
+
+    var btn2 = document.getElementsByClassName('this-one')[0];
+
+    btn2.setAttribute('disabled','true');
+
+    btn2.innerText = 'Don\'t click me!';
+
+
+
+    
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: innerHTML, textContent</title>
+</head>
+<body>
+  <p>apple banana <strong>cat</strong> dog</p>
+  <p class="output1">elephant</p>
+  <p class="output2">fox</p>
+
+  <script>
+    var output1 = document.getElementsByClassName('output1')[0];
+    var output2 = document.getElementsByClassName('output2')[0];
+    var para1 = document.getElementsByTagName('p')[0];
+    output1.innerHTML = para1.innerHTML;
+    output2.innerHTML = para1.innerText;
+  </script>
+
+</body>
+</html>

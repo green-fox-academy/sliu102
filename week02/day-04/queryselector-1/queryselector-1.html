@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: QuerySelector</title>
+</head>
+<body>
+  <section class="container">
+    <div id="b325" class="asteroid">The King</div>
+    <div class="asteroid b326">The Conceited Man</div>
+  </section>
+  <p class="asteroid big">The Businessman</p>
+  <div class="asteroid b329 big">The Lamplighter</div>
+
+  <script>
+    var king = document.getElementById('b325').innerText;
+    console.log(king);
+
+    var conceited = document.getElementsByClassName('asteroid b326');
+    alert(conceited[0].innerText);
+
+    var businessLamp = document.getElementsByClassName('big');
+    console.log(businessLamp[0].innerText);
+    console.log(businessLamp[1].innerText);
+
+    var conceitedKing = document.getElementsByClassName('container')[0].getElementsByTagName('div');
+    alert(conceitedKing[0].innerText);
+    alert(conceitedKing[1].innerText);
+
+    var noBusiness = document.getElementsByClassName('asteroid');
+    console.log(noBusiness[0].innerText);
+    console.log(noBusiness[1].innerText);
+    console.log(noBusiness[3].innerText);
+
+    var allBizniss = document.getElementsByTagName('p');
+    alert(allBizniss[0].innerText);
+
+
+
+
+    /*
+    6. store 'The Businessman' in the 'allBizniss' variable.
+    show the result in an 'alert' window.*/
+  </script>
+  
+</body>
+</html>

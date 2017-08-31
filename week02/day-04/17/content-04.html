@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: innerHTML, textContent</title>
+</head>
+<body>
+  <ul>
+    <li>placeholder</li>
+    <li>placeholder</li>
+    <li>placeholder</li>
+    <li>placeholder</li>
+  </ul>
+
+  <script>
+    var list = document.getElementsByTagName('li');
+    var newList = ['apple', 'banana', 'cat', 'dog'];
+    
+    for (var i = 0; i < newList.length; i++) {
+      list[i].innerText = newList[i];
+    };
+
+  </script>
+</body>
+</html>

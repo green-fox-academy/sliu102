@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: ClassList</title>
+  <style>
+    .red {
+      color: red;
+    }
+    .balloon {
+      background-color: lime;
+      border-radius: 100%;
+    }
+  </style>
+</head>
+<body>
+  <p class="apple">apple</p>
+  <p class="balloon">balloon</p>
+  <p class="cat">cat</p>
+  <p>dolphin</p>
+
+  <script>
+    var para = document.getElementsByTagName('p');
+    if(para[2].classList.contains('cat')) {
+      alert('YEAH CAT!');
+    };
+
+    if(para[3].classList.contains('dolphin')) {
+      para[1].innerText = 'pear';
+    };
+
+    if(para[0].classList.contains('apple')) {
+      para[2].innerText = 'dog';
+    };
+    para[0].setAttribute('style','color:red;');
+
+    para[1].innerText = 'less balloon-like';
+
+  </script>
+ 
+</body>
+</html>

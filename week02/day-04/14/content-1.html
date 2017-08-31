@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: innerHTML, textContent</title>
+</head>
+<body>
+  <h1>Original Content</h1>
+  <p>Some more text</p>
+  <p class="other">Even more text</p>
+  <p class="result">Here comes something new</p>
+
+  <script>
+    var heading = document.getElementsByTagName('h1');
+    alert(heading[0].innerText);
+    
+    var paragraph =document.getElementsByTagName('p');
+    console.log(paragraph[0].innerText);
+    alert(paragraph[1].innerText);
+    heading[0].innerHTML = 'New content';
+    paragraph[2].innerHTML = paragraph[0].innerHTML;
+
+    
+  </script>
+
+</body>
+</html>
