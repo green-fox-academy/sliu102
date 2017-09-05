@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>09</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+  	<button class="btn">click</button>
+  	<p class="para"></p>
+
+  	<script>
+    window.addEventListener('load',display);
+
+    var buttonElement = document.querySelector('.btn');
+    var count = 0;
+    buttonElement.addEventListener('click',click);
+
+
+    function click() {
+      count++;
+    }
+
+    var display = setTimeout(function () {
+      var para = document.querySelector(".para");
+      if (count === 3) {
+      	para.innerText="5 seconds elapsed and clicked 3 times";
+      }
+    },5000);
+    buttonElement.addEventListener("click",count);
+
+
+
+  </script>
+
+  </body>
+</html>
