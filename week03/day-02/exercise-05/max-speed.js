@@ -46,22 +46,23 @@ window.addEventListener('load', function() {
     })
     .forEach(function(buttonElement) {
       document.body.appendChild(buttonElement);
-      var vehi = buttonElement.getAttribute('data-vehicle-type');
-      function print(vehi) {
-        buttonElement.addEventListener('click', function() {
-          console.log(vehi.printMaxSpeed());
-        });
-      };
+      //var vehi = buttonElement.getAttribute('data-vehicle-type');
+      //function print(vehi) {
+      buttonElement.addEventListener('click', function(event) {
+        var vehiType = event.target.getAttribute('data-vehicle-type'
+        console.log(window[vehiType].printMaxSpeed());
+      });
+      //};
 
-      if (vehi === 'car') {
+      /*if (vehi === 'car') {
         vehi = car;
-      }else if (vehi === 'airplane'){
+      }else if (vehi === 'airplane') {
         vehi = airplane;
       }else{
         vehi = skateboard;
       }
 
-      print(vehi);
+      print(vehi);*/
 
     });
 });

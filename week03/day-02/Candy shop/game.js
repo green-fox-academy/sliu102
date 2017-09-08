@@ -10,9 +10,9 @@ cre_canday.addEventListener('click', create);
 buy_lolly.addEventListener('click', buy);
 candy_machine.addEventListener('click', machine);
 
-var candiesAmount = candies.innerText;
+var candiesAmount = parseInt(candies.innerText,10);
 var lollAmount = lollies.innerText.length;
-var cur_speed = 10000/lollAmount;
+var cur_speed = 10000 / lollAmount;
 speed.innerText = 1/(cur_speed)*1000;
 
 
