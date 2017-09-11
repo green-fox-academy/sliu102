@@ -1,0 +1,33 @@
+body {
+  width: 960px;
+}
+
+.container {
+  height: 560px;
+  display: flex;
+  flex-flow: column;
+}
+
+.item {
+  flex: 0 1 0px;
+  width: 400px;
+}
+
+.green {
+  background: green;
+  flex-grow: 1;
+  order: 1;
+}
+
+.yellow {
+  background: yellow;
+  flex-grow: 2;
+  order: 3;
+}
+
+.purple {
+  background: purple;
+  flex-grow: 1;
+  order: 2;
+}
+

@@ -1,0 +1,74 @@
+.container {
+  height: 600px;
+  width: 800px;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content{
+  transition:;
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+  background: #fff;
+  transform: rotateZ(45deg);
+}
+
+p{
+  position: absolute;
+  top: 274px;
+  left: 371px;
+  z-index: 1;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.content:hover{
+  color: rgb(207,87,66);
+
+}
+
+.border {
+  z-index: 2;
+  position: absolute;
+  top: 235px;
+  left: 356px;
+  height: 100px;
+  width: 100px;
+  border: 3px solid rgb(207,87,66);
+  transition: 1s;
+}
+
+.border:hover {
+  transform:rotateZ(45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
