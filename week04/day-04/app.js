@@ -29,24 +29,34 @@ var data = [
     }
 ]
 
-MongoClient.connect(url, function (err, db) {
+var newData = {
+	"id": 29,
+    "title": "Dear xxxxxx",
+    "href": "http://9gag.com",
+    "timestamp": 1494339525,
+    "score": 791,
+    "owner": null,
+    "vote": 1
+}
 
-    db.createCollection("articles", function(err, res) {
-    if (err) throw err;
-    console.log("Collection created!");
-    });
+// MongoClient.connect(url, function (err, db) {
+
+//     db.createCollection("articles", function(err, res) {
+//     if (err) throw err;
+//     console.log("Collection created!");
+//     });
 
     
-    db.collection('articles', function (err, collection) {
+//     db.collection('articles', function (err, collection) {
         
-        collection.insert(data);
-        console.log('inserted');
-        db.close();
+//         collection.insert(data);
+//         console.log('inserted');
+//         db.close();
         
-    });
+//     });
                 
-});
-
+// });
+//main page
 app.get('/mainPage', function(req,res) {
   MongoClient.connect(url, function (err, db) {
     db.collection("articles").find({}).toArray(function(err, obj) {
@@ -55,7 +65,75 @@ app.get('/mainPage', function(req,res) {
      db.close();
     });  
                 
-});
+  });
 })
+//adding post
+app.post('/addPost',jsonParser,function(req,res) {
+  
+  res.setHeader('Content-Type', 'application/json');
+
+  MongoClient.connect(url, function (err, db) {
+    db.collection('articles', function (err, collection) {  
+      collection.insert(newData);
+      console.log('inserted');
+      db.close();
+        
+    });  
+                
+  });
+
+  res.send(newData);
+
+})
+
+//upvote
+app.post('/upvote',jsonParser,function(req,res) {
+  
+  res.setHeader('Content-Type', 'application/json');
+
+  MongoClient.connect(url, function (err, db) {
+
+  	db.collection("articles").findOne({id:25},function(err,obj) {
+      if (err) throw err;
+      var currentScore = obj.score+1;
+      res.send(obj);
+      db.collection("articles").updateOne({id:25},{ $set: { score: currentScore } },function(err, db) {  
+        console.log(currentScore);
+      });
+  	});
+      
+                
+  });
+  
+
+})
+
+app.post('/downvote',jsonParser,function(req,res) {
+  
+  res.setHeader('Content-Type', 'application/json');
+
+  MongoClient.connect(url, function (err, db) {
+
+  	db.collection("articles").findOne({id:25},function(err,obj) {
+      if (err) throw err;
+      var currentScore = obj.score-1;
+      res.send(obj);
+      db.collection("articles").updateOne({id:25},{ $set: { score: currentScore } },function(err, db) {  
+        console.log(currentScore);
+      });
+  	});
+      
+                
+  });
+  
+
+})
+
+
+
+
+
+
+
 
 
