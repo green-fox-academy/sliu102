@@ -49,14 +49,13 @@ MongoClient.connect(url, function (err, db) {
 
 app.get('/mainPage', function(req,res) {
   MongoClient.connect(url, function (err, db) {
-
-    db.collection("articles").find({}).toArray(function(err, result) {
-      if (err) throw err;
-      console.log(result);
-      db.close();
-      res.send(result);	
-    });
-  })
+    db.collection("articles").find({}).toArray(function(err, obj) {
+     if (err) throw err;
+     res.send(obj);
+     db.close();
+    });  
+                
+});
 })
 
 
