@@ -9,37 +9,6 @@ app.listen(8080);
 var url = 'mongodb://localhost:27017/reddit';
 app.use('/', express.static('public'));
 
-// var data = [
-//   {
-//       "id": 1,
-//       "title": "message1",
-//       "href": "http://9gag.com",
-//       "timestamp": 1494339525,
-//       "score": 791,
-//       "owner": null,
-//       "vote": 1
-//     },
-//     {
-//       "id": 2,
-//       "title": "message2",
-//       "href": "http://9gag.com",
-//       "timestamp": 1494138425,
-//       "score": 567,
-//       "owner": "kristof4",
-//       "vote": -1
-//     }
-// ]
-
-// var newData = {
-// 	"id": 3,
-//     "title": "message3",
-//     "href": "http://9gag.com",
-//     "timestamp": 1494339525,
-//     "score": 791,
-//     "owner": null,
-//     "vote": 1
-// }
-
 // MongoClient.connect(url, function (err, db) {
 
 //     db.createCollection("articles", function(err, res) {
@@ -85,15 +54,8 @@ app.post('/posts',jsonParser,function(req,res) {
   MongoClient.connect(url, function (err, db) {
     db.collection('articles').findOne({},{sort: {id: -1 }},function(err, obj){
        var id = 1;
-       if(obj.id > 1) id = obj.id+1;
-       var newData = {
-         "id": id,
-         "title": req.body.title,
-         "href": req.body.href,
-         "timestamp": req.body.date,
-         "score": 0,
-         "owner": null
-       };
+       if(obj !== null) id = obj.id+1;
+       var newData = new PostData(id,req.body.title,req.body.href,req.body.date);
        db.collection('articles', function (err, collection) {  
          collection.insert(newData,function(){});
          console.log('inserted');
@@ -112,7 +74,8 @@ app.put('/posts/:id/upvote',jsonParser,function(req,res) {
       if (err) throw err;
       var currentScore = obj.score+1;
       res.send(obj);
-      db.collection("articles").updateOne({id:id},{ $set: { score: currentScore } },function(err, db) {  
+      db.collection("articles").updateOne({id:id},{ $set: { score: currentScore } }
+      	,function(err, db) {  
       });
   	});              
   });  
@@ -127,7 +90,8 @@ app.put('/posts/:id/downvote',jsonParser,function(req,res) {
       if (err) throw err;
       var currentScore = obj.score-1;
       res.send(obj);
-      db.collection("articles").updateOne({id:id},{ $set: { score: currentScore } },function(err, db) {  
+      db.collection("articles").updateOne({id:id},{ $set: { score: currentScore } }
+      	,function(err, db) {  
       });
   	});                    
   });
@@ -137,15 +101,10 @@ app.put('/posts/:id/downvote',jsonParser,function(req,res) {
 app.delete('/posts/:id',function(req,res){
   var id = parseInt(req.params.id);
   console.log(id);
-  MongoClient.connect(url, function (err, db) {
-  	db.collection("articles").findOne({id:id},function(err,obj) {
-      if (err) throw err;
-      var currentScore = obj.score-1;
+  MongoClient.connect(url, function (err, db) { 	
+    db.collection("articles").deleteOne({id:id}, function(err,obj){
       res.send(obj);
-      db.collection("articles").deleteOne({id:id}, function(err, obj) {  
-        console.log(currentScore);
-      });
-  	});               
+    });             
   });
 })
 
@@ -155,7 +114,9 @@ app.put('/posts/:id',jsonParser,function(req,res){
   var href = req.body.href;
   var title = req.body.title;
   MongoClient.connect(url, function (err, db) {
-  	db.collection("articles").updateOne({id:id},{$set: {href:href,title:title}},function() {
+  	db.collection("articles").updateOne({id:id},{$set: {href:href,title:title}},
+  		function(err,obj) {
+  	  res.send(obj);
   	});                  
   });
 })
@@ -170,12 +131,8 @@ app.post('/users', jsonParser,function(req,res) {
           db.collection('users').findOne({},{sort: {id: -1 }},function(err, obj){
             console.log(obj);
             var id = 1;
-            if(obj.id >= 1) id = obj.id+1;
-            var newData = {
-              "id": id,
-              "username": req.body.username,
-              "password": req.body.password
-            };
+            if(obj !== null) id = obj.id+1;
+            var newData = new UserData(id, req.body.username, req.body.password);
             db.collection('users', function (err, collection) {  
               collection.insert(newData,function(){});
               console.log('inserted');
@@ -190,9 +147,49 @@ app.post('/users', jsonParser,function(req,res) {
   });          
 })
 
+//all users
+app.get('/users', function(req,res){
+  MongoClient.connect(url, function (err, db) {
+	var newObj = {users:[]};
+    db.collection("users").find({}).toArray(function(err, obj) {
+     newObj.users = obj;
+     if (err) throw err;
+     res.send(newObj);
+    });        
+  });
+})
 
+//login
+app.post('/login', jsonParser, function(req,res){
+    res.setHeader('Content-Type', 'application/json');
+	MongoClient.connect(url, function (err, db) {
+    db.collection("users").findOne({username:req.body.username}, function(err, obj) {
+      if(obj === null || obj.password!==req.body.password){
+      	var error = {"text" : "Username or Password is not correct!"}
+      	res.send(error);
+      }else {
+      	var welcome = { "text" : "Welcome "+obj.username }; 
+      	res.send(welcome);
+      }
+    });        
+  });
+})
 
+//constructor of article
+function PostData(id,title,href,date) {
+  this.id = id;
+  this.title = title;
+  this.href = href;
+  this.timestamp = date,
+  this.score = 0,
+  this.owner = null
+}
 
+function UserData(id,username,password) {
+  this.id = id;
+  this.username = username;
+  this.password = password;
+}
 
 
 

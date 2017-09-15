@@ -113,7 +113,7 @@ function putScore (score,i) {
 
 function putTime (time,i) {
   var currentTime = Date.now();
-  var elapsedTime = (currentTime - time)/60;
+  var elapsedTime = (currentTime - time)/13600;
   var p = document.createElement("p");
   var article = document.getElementsByTagName("article")[i];
   p.classList.add("time");
