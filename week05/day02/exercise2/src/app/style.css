@@ -1,0 +1,150 @@
+body {
+  height: 800px;
+  width: 100%;
+  background: linear-gradient(to right,rgb(202,202,202),rgb(243,243,243),rgb(202,202,202));
+}
+
+.container {
+	height: 100%;
+	position: relative;
+
+}
+
+.viewer {
+	height: 50%;
+	width: 80%;
+	background: #fff;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 10%;
+	bottom: 0;
+	margin: 0 auto;
+	box-shadow:0px 5px 5px #333333;
+}
+
+.main_pic {
+	height: 100%;
+	width: 80%;
+	position: absolute;
+	margin-left: 10%;
+}
+
+.description {
+	height: 35%;
+	width: 79%;
+	background: #000;
+	color: #fff;
+	opacity:0.4;
+	position: absolute;
+	top: 65%;
+	margin-left: 10%;
+	padding-left: 1%; 
+}
+
+.left_arrow {
+	height: 23px;
+    width: 15px;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    border: none;
+	background: url("arrow.svg");
+
+}
+
+.right_arrow {
+	height: 23px;
+    width: 15px;
+	position: absolute;
+	top: 50%;
+	right: 5%;
+    border: none;
+    transform: rotate(180deg);
+	background: url("arrow.svg");
+}
+
+.thumb_selector {
+	height: 10%;
+	width: 40%;
+	position: absolute;
+	margin:0 auto;
+	top: 62%;
+	left: 0;
+	right: 0;
+
+}
+
+.btn {
+  height: 42px;
+  width: 42px;
+  border: 2px solid #fff;
+  margin-left: 10px;
+  box-shadow:0px 2px 5px #333333;
+}
+
+.img1 {
+  
+  autofucos;
+}
+
+.img2 {
+  background-size: cover;
+}
+
+.img3 {
+  background-size: cover;
+}
+
+.img4 {
+  background-size: cover;
+}
+
+.img5 {
+  background-size: cover;
+}
+
+.img6 {
+  background-size: cover;
+}
+
+.img7 {
+  background-size: cover;
+}
+
+.img8 {
+  background-size: cover;
+}
+
+.hover {
+	height: 25px;
+	width: 80px;
+	margin-top: -30px;
+	background: #000;
+	opacity:0.7;
+	color: #fff;
+	text-align: center;
+	visibility: hidden;
+}
+
+.btn:focus {
+  height: 50px;
+  width: 50px;
+  box-shadow:0px 10px 10px #333333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
