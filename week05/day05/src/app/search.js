@@ -8,27 +8,22 @@ var myInit = {
 	headers:myHeaders        
 };
 
-function getUserInfo(reposName, callback) {
+function getNames(callback) {
   var list = [];
-  var result = fetch(URL+'repos/greenfox-academy/'+reposName,myInit)
+  var result = fetch(URL+'search/repositories?q=topic:epam-jsa',myInit)
   	.then(function (response){
     	return response.json();
   	})
   	.then(function (data) {
-	    var name = data.name;
-	    var description = data.description;
-	    var lastCommitTime = data.updated_at;
-	    console.log('then', data,name,description,lastCommitTime);
-	    list.push(name);
-	    list.push(description);
-	    list.push(lastCommitTime);
+  		console.log(data);
+	    for(var i=0;i<12;i++){
+	      list.push(data.items[i].name)
+	    }
 	    callback(list);
 	    return list;
 	  })
   return result;
 }
-
-
-module.exports = getUserInfo; 
+module.exports = getNames;
 
 

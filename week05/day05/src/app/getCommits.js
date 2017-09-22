@@ -8,27 +8,26 @@ var myInit = {
 	headers:myHeaders        
 };
 
-function getUserInfo(reposName, callback) {
+function getCommitsInfo(reposName, callback) {
   var list = [];
-  var result = fetch(URL+'repos/greenfox-academy/'+reposName,myInit)
+  var result = fetch(URL+'repos/greenfox-academy/'+reposName+'/commits',myInit)
   	.then(function (response){
     	return response.json();
   	})
   	.then(function (data) {
-	    var name = data.name;
-	    var description = data.description;
-	    var lastCommitTime = data.updated_at;
-	    console.log('then', data,name,description,lastCommitTime);
+  		console.log(data);
+	    var message = data[0].commit.message;
+	    var time = data[0].commit.author.date;
+	    var name = data[0].commit.author.name;
+	    console.log('then', message,time);
+	    list.push(message);
+	    list.push(time);
 	    list.push(name);
-	    list.push(description);
-	    list.push(lastCommitTime);
 	    callback(list);
 	    return list;
 	  })
   return result;
 }
-
-
-module.exports = getUserInfo; 
+module.exports = getCommitsInfo;
 
 

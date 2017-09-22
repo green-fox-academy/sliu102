@@ -3,7 +3,9 @@ const path = require('path');
 module.exports = {
   entry: {
       app: './src/app/index.js',
-      fetch: './src/app/fetch.js'
+      fetch: './src/app/fetch.js',
+      getCommits: './src/app/getCommits.js',
+      search:'./src/app/search.js'
     },
   devtool: 'inline-source-map',
   devServer: {
