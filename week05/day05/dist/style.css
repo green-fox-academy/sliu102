@@ -1,0 +1,127 @@
+.container {
+  height: 700px;
+  width: 900px;
+  background: rgb(67,183,122);
+  font-family: 'Work Sans', sans-serif;
+}
+
+.headerBtn {
+  background: rgb(251,249,55);
+  margin: 16px 8px;
+  font-size: 18px;
+  border: none;
+}
+
+header {
+  height: 60px;
+  background: rgb(36,86,130);
+}
+
+h1 {
+  margin-left: 20px;
+}
+
+.searchBar input {
+  width: 450px;
+  position: absolute;
+  left: 338px;
+  top: 90px;
+  font-size: 28px;
+  border: none;
+  border-bottom: 1px solid #000000;
+  background: rgb(67,183,122);
+}
+
+.searchBar button {
+  position: absolute;
+  left: 808px;
+  top: 83px;
+  font-size: 32px;
+  background:none;
+  border:1px solid #666;
+  border-radius: 8px;
+}
+
+.searchBar {
+  height: 80px;
+}
+
+.userInfo {
+  margin-left: 20px;
+}
+
+.userInfo h2 {
+  display: inline-block;
+  font-size: 28px; 
+  background: rgb(251,249,55);
+}
+
+.userInfo p {
+ font-weight: bold;
+}
+
+.authen {
+  position: absolute;
+  left: 690px; 
+  top: 172px;
+}
+
+.authen h2 {
+  width: 199px;
+  font-size: 28px; 
+  border-bottom: 1px solid;
+}
+
+.authen input {
+  width: 199px;
+  margin-bottom: 5px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #000000;
+  background: rgb(67,183,122);
+}
+
+.authen button {
+  width: 199px;
+  background: rgb(36,86,130);
+  border: none;
+
+}
+
+.commits {
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.commits h2{
+  display: inline-block;
+  font-size: 28px; 
+  background: rgb(251,249,55);
+}
+
+.recomm {
+  position: absolute;
+  left: 690px; 
+  top: 352px;
+}
+
+.recomm h2{
+  width: 199px;
+  font-size: 28px; 
+  border-bottom: 1px solid;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
