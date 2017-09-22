@@ -125,31 +125,54 @@ var CommitElement = React.createClass({
 var RecommElement = React.createClass({
   getInitialState:function() {
     return {
-      name1:''
+      name1:'',
+      name2:'',
+      name3:'',
+      name4:'',
+      name5:'',
+      name6:'',
+      name7:'',
+      name8:'',
+      name9:'',
+      name10:'',
+      name11:'',
+      name12:''
     };
   },
   render: function () {
-    var list = get(function(list){
+    var list = getNames(function(list){
       console.log('list:', list);
       this.setState({
-        name1: list[1]
+        name1: list[1],
+        name2: list[2],
+        name3: list[3],
+        name4: list[4],
+        name5: list[5],
+        name6: list[6],
+        name7: list[7],
+        name8: list[8],
+        name9: list[9],
+        name10: list[10],
+        name11: list[11],
+        name12: list[12]
+
       });
     }.bind(this));
   	return(
       <div className='recomm'>
         <h2>Recommend</h2>
         <p>{this.state.name1}</p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
+        <p>{this.state.name2}</p>
+        <p>{this.state.name3}</p>
+        <p>{this.state.name4}</p>
+        <p>{this.state.name5}</p>
+        <p>{this.state.name6}</p>
+        <p>{this.state.name7}</p>
+        <p>{this.state.name8}</p>
+        <p>{this.state.name9}</p>
+        <p>{this.state.name10}</p>
+        <p>{this.state.name11}</p>
+        <p>{this.state.name12}</p>
       </div>
     );
   }	
